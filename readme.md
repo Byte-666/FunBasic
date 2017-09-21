@@ -11,14 +11,19 @@ A Basic language must be basic, it should be simple, with only the minimum neede
 > * Function composition
 > * Immutability
 
-> A Basic language usually have:
-> * Simple syntax without lookahead LL(1).
-> * Low quantity of keywords (I'm looking at you C#)
-> * Statements and simple expressions
-> * 
+> A Basic programming language usually have:
+> * Simple syntax without too much lookahead LALR(1).
+> * Low quantity of keywords (I'm looking at you C#).
+> * Statements and simple expressions.
+> * Minimal control structures or none at all.
 
 With that in mind we can start modeling our language. First we need to go way out to the past to get a fell of what Basic was before it became 'polluted' with OO concepts. Let's use Dartmouth basic as an example for what the syntax should have.
 
 Our language will have:
 * Strict evaluation 
-
+* Call-by-Value
+* Simple AST
+* Reverse polish notation
+* Mostly keyword based
+* No semicolon
+* Hindley Milner type inference
