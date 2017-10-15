@@ -19,6 +19,25 @@ A Basic language must be basic, it should be simple, with only the minimum neede
 
 With that in mind we can start modeling our language. First we need to go way out to the past to get a fell of what Basic was before it became 'polluted' with OO concepts. Let's use Dartmouth basic as an example for what the syntax should have.
 
+```
+command:: label ' ' statement
+statement::
+    'LET' variable '=' expression
+    'DIM' identifier '(' index ( ',' index )* ')' ( ',' identifier '(' index ( ',' index )* ')' )*
+    'READ' variable ( ',' variable )*
+    'DATA' number ( ',' number )*
+    'PRINT' expression ( ',' expression )*
+    'IF' expression 'THEN' label
+    'FOR' variable '=' expression 'TO' expression ( 'STEP' expression )?
+    'NEXT' variable
+    'REM' comment
+    'DEF' 'FN' identifier '(' variable ')' '=' expression
+    'GOTO' label
+    'GOSUB' label
+    'RETURN'
+    'STOP'
+```
+
 Our language will have:
 * Strict evaluation 
 * Call-by-Value
@@ -26,4 +45,5 @@ Our language will have:
 * Reverse polish notation
 * Mostly keyword based
 * No semicolon
+* Tailcall
 * Hindley Milner type inference
